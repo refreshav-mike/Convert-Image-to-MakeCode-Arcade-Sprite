@@ -203,7 +203,11 @@ function convert(img) {
 		} else {
 			if (nearest.index == 0) {
 				// 0 is transparent, f is black.
-				makeCodeString[`row-${y}`] += "f"
+				if (a == 0) {
+					makeCodeString[`row-${y}`] += "."
+				} else {
+					makeCodeString[`row-${y}`] += "f"
+				}
 			} else {
 				makeCodeString[`row-${y}`] += nearest.index
 			}
